@@ -1,8 +1,8 @@
 void main() {
   Passenger passenger = Passenger(
     name: "John Doe",
-    age: 25,
-    isMember: true,
+    age: 15,
+    isMember: false,
     memberType: "Gold",
   );
   print("${passenger}: ${checkTicketType(passenger)}");
