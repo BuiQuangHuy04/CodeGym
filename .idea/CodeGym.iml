@@ -9,9 +9,15 @@
       <excludeFolder url="file://$MODULE_DIR$/ex2/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ex2/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ex2/build" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_application/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_application/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/dart_application/build" />
       <excludeFolder url="file://$MODULE_DIR$/ex12/.dart_tool" />
       <excludeFolder url="file://$MODULE_DIR$/ex12/.pub" />
       <excludeFolder url="file://$MODULE_DIR$/ex12/build" />
+      <excludeFolder url="file://$MODULE_DIR$/rw_courses/.dart_tool" />
+      <excludeFolder url="file://$MODULE_DIR$/rw_courses/.pub" />
+      <excludeFolder url="file://$MODULE_DIR$/rw_courses/build" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
