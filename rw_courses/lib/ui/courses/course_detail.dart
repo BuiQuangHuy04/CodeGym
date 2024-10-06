@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:rw_courses/constants/index.dart';
-import 'package:rw_courses/presenters/course_presenter.dart';
+import '/constants/index.dart';
 
 class CourseDetail extends StatelessWidget {
   final Data data;

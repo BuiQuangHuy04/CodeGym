@@ -1,4 +1,4 @@
-import 'package:flutter/material.dart';
+import '/constants/index.dart';
 
 class Style {
   static const appbar = TextStyle(

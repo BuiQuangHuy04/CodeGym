@@ -1,4 +1,4 @@
-import 'package:rw_courses/constants/index.dart';
+import '/constants/index.dart';
 
 class CoursePresenter {
   String domainConverter(Data data) {

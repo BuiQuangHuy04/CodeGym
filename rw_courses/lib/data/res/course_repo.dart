@@ -1,6 +1,4 @@
-import 'dart:convert';
-
-import 'package:rw_courses/constants/index.dart';
+import '/constants/index.dart';
 import 'package:http/http.dart' as http;
 
 class CourseRepo implements Repository {
@@ -20,9 +18,9 @@ class CourseRepo implements Repository {
       final json = jsonDecode(response.body) as Map<String, dynamic>;
       final res = Res.fromJson(json);
 
-      if(res.data != null) {
+      if (res.data != null) {
         for (var d in res.data!) {
-          if(d.id != null && d.attributes != null) {
+          if (d.id != null && d.attributes != null) {
             data.add(d);
           }
         }

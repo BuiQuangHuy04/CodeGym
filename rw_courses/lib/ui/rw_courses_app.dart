@@ -1,6 +1,4 @@
-import 'package:flutter/material.dart';
-import 'package:rw_courses/ui/courses/courses_page.dart';
-import '../constants/index.dart';
+import '/constants/index.dart';
 
 class RwCoursesApp extends StatelessWidget {
   const RwCoursesApp({super.key});

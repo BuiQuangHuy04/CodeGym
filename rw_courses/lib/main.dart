@@ -1,6 +1,3 @@
-import 'package:flutter/material.dart';
-
-import 'ui/rw_courses_app.dart';
 import '/constants/index.dart';
 
 void main() {
