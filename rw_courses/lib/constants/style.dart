@@ -26,4 +26,9 @@ class Style {
     color: Colors.grey,
     fontSize: 18,
   );
+
+  static const filterContent = TextStyle(
+    color: Colors.white,
+    fontSize: 14
+  );
 }

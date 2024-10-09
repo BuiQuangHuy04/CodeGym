@@ -1,19 +1,24 @@
 import '/constants/index.dart';
 
-class RwCoursesApp extends StatelessWidget {
+class RwCoursesApp extends StatefulWidget {
   const RwCoursesApp({super.key});
 
   @override
+  State<RwCoursesApp> createState() => _RwCoursesAppState();
+}
+
+class _RwCoursesAppState extends State<RwCoursesApp> {
+  @override
   Widget build(BuildContext context) {
+
     return Scaffold(
       appBar: AppBar(
-        title: Text(Strings.appTitle),
+        title: const Text(Strings.appTitle),
+        toolbarHeight: 65,
         actions: const [
           Padding(
             padding: EdgeInsets.all(12.0),
-            child: Icon(
-              Icons.menu_rounded,
-            ),
+            child: DropdownFilter(),
           ),
         ],
       ),
