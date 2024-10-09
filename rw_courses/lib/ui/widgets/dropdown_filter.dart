@@ -24,7 +24,7 @@ class _DropdownFilterState extends State<DropdownFilter> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<CoursePresenter>(
+    return Consumer<CourseProvider>(
       builder: (context, presenter, child) {
         return DropdownButton<String>(
           //

@@ -3,7 +3,7 @@ import '/constants/index.dart';
 void main() {
   runApp(
     ChangeNotifierProvider(
-      create: (context) => CoursePresenter(),
+      create: (context) => CourseProvider(),
       child: MaterialApp(
         debugShowCheckedModeBanner: false,
         theme: ThemeData(

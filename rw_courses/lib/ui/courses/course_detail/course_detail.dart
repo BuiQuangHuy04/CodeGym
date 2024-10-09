@@ -67,7 +67,7 @@ class CourseDetail extends StatelessWidget {
   }
 
   Widget _detailWidget(BuildContext context) {
-    return Consumer<CoursePresenter>(
+    return Consumer<CourseProvider>(
       builder: (context, presenter, child) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,

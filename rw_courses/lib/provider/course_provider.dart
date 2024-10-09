@@ -1,6 +1,6 @@
 import '/constants/index.dart';
 
-class CoursePresenter with ChangeNotifier {
+class CourseProvider with ChangeNotifier {
   /*Strings
     static const String appTitle = 'RW Courses';
     static const String filter = 'Lọc';

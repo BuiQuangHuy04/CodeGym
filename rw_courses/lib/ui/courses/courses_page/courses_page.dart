@@ -17,13 +17,13 @@ class _CoursesPageState extends State<CoursesPage> {
 
   @override
   Widget build(BuildContext context) {
-    return Consumer<CoursePresenter>(
+    return Consumer<CourseProvider>(
       builder: (context, presenter, child) {
         return Stack(
           children: [
             FutureBuilder(
               future: _controller.fetchListData(
-                Provider.of<CoursePresenter>(
+                Provider.of<CourseProvider>(
                   context,
                   listen: true,
                 ).domain,
@@ -69,7 +69,7 @@ class _CoursesPageState extends State<CoursesPage> {
   }
 
   Widget _buildRow(Data data) {
-    return Consumer<CoursePresenter>(
+    return Consumer<CourseProvider>(
       builder: (context, presenter, child) {
         return InkWell(
           onTap: () {

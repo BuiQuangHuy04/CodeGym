@@ -11,7 +11,7 @@ export '/data/models/data.dart';
 export '/data/res/repository.dart';
 export '/data/res/course_repo.dart';
 
-export '/presenters/course_presenter.dart';
+export '/provider/course_provider.dart';
 
 export '../ui/courses/course_detail/course_detail.dart';
 export '../ui/courses/courses_page/courses_controller.dart';
