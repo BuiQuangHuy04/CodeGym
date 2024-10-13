@@ -10,7 +10,6 @@ class RwCoursesApp extends StatefulWidget {
 class _RwCoursesAppState extends State<RwCoursesApp> {
   @override
   Widget build(BuildContext context) {
-
     return Scaffold(
       appBar: AppBar(
         title: const Text(Strings.appTitle),

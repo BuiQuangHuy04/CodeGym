@@ -59,6 +59,9 @@ class CourseProvider with ChangeNotifier {
       case Strings.flutter:
         domain = Constants.flutterFilter;
         break;
+      case Strings.unity:
+        domain = Constants.unityFilter;
+        break;
       case Strings.sss:
         domain = Constants.sssFilter;
         break;
@@ -139,13 +142,25 @@ class CourseProvider with ChangeNotifier {
     return domain;
   }
 
-  // Future<void> saveFilter(String selectedFilter) async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   await prefs.setString('selectedFilter', selectedFilter);
-  // }
-  //
-  // Future<String?> loadFilter() async {
-  //   SharedPreferences prefs = await SharedPreferences.getInstance();
-  //   return prefs.getString('selectedFilter');
-  // }
+  Future<void> saveFilter(String selectedFilter) async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    await prefs.setString('selectedFilter', selectedFilter);
+
+    print('$filter:$domain');
+  }
+
+  Future<void> loadFilter() async {
+    SharedPreferences prefs = await SharedPreferences.getInstance();
+    var oldFilter = prefs.getString('selectedFilter');
+
+    if (oldFilter != null) {
+      filter = oldFilter;
+      convertFilter();
+    } else {
+      filter = Strings.all;
+      convertFilter();
+    }
+    
+    print('$filter:$domain');
+  }
 }

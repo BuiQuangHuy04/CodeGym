@@ -68,12 +68,12 @@ class CourseDetail extends StatelessWidget {
 
   Widget _detailWidget(BuildContext context) {
     return Consumer<CourseProvider>(
-      builder: (context, presenter, child) {
+      builder: (context, provider, child) {
         return Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           children: [
             Text(
-              'Domain(s): ${presenter.domainStrConverter(data)}',
+              'Domain(s): ${provider.domainStrConverter(data)}',
               style: Style.subContentBig,
               textAlign: TextAlign.justify,
             ),

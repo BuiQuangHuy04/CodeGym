@@ -63,9 +63,9 @@
     },
     {
       "name": "flutter_lints",
-      "rootUri": "file:///C:/Users/buiquanghuy/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-4.0.0",
+      "rootUri": "file:///C:/Users/buiquanghuy/AppData/Local/Pub/Cache/hosted/pub.dev/flutter_lints-5.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.5"
     },
     {
       "name": "flutter_test",
@@ -111,9 +111,9 @@
     },
     {
       "name": "lints",
-      "rootUri": "file:///C:/Users/buiquanghuy/AppData/Local/Pub/Cache/hosted/pub.dev/lints-4.0.0",
+      "rootUri": "file:///C:/Users/buiquanghuy/AppData/Local/Pub/Cache/hosted/pub.dev/lints-5.0.0",
       "packageUri": "lib/",
-      "languageVersion": "3.1"
+      "languageVersion": "3.5"
     },
     {
       "name": "matcher",
@@ -302,10 +302,10 @@
       "languageVersion": "3.5"
     }
   ],
-  "generated": "2024-10-08T18:46:10.411853Z",
+  "generated": "2024-10-09T13:58:06.509003Z",
   "generator": "pub",
-  "generatorVersion": "3.5.1",
+  "generatorVersion": "3.5.3",
   "flutterRoot": "file:///C:/Android/flutter",
-  "flutterVersion": "3.24.1",
+  "flutterVersion": "3.24.3",
   "pubCache": "file:///C:/Users/buiquanghuy/AppData/Local/Pub/Cache"
 }

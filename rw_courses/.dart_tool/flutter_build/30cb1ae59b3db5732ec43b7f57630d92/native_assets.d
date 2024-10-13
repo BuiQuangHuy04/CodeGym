@@ -1,0 +1,1 @@
+ E:\\CodeGym\\Projects\\CodeGym\\rw_courses\\.dart_tool\\flutter_build\\30cb1ae59b3db5732ec43b7f57630d92\\native_assets.yaml: 

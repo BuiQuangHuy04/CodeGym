@@ -1,7 +1,6 @@
 import '/constants/index.dart';
 
 class DropdownFilter extends StatefulWidget {
-
   const DropdownFilter({super.key});
 
   @override
@@ -25,7 +24,7 @@ class _DropdownFilterState extends State<DropdownFilter> {
   @override
   Widget build(BuildContext context) {
     return Consumer<CourseProvider>(
-      builder: (context, presenter, child) {
+      builder: (context, provider, child) {
         return DropdownButton<String>(
           //
           icon: const Icon(
@@ -53,7 +52,7 @@ class _DropdownFilterState extends State<DropdownFilter> {
                     onChanged: (String? value) {
                       setState(() {
                         selectedItem = value;
-                        presenter.filter = value!;
+                        provider.filter = value!;
                       });
                     },
                   ),
@@ -62,14 +61,16 @@ class _DropdownFilterState extends State<DropdownFilter> {
               ),
             );
           }).toList(),
-          onChanged: (String? newValue) {
+          onChanged: (String? newValue) async {
             setState(() {
               selectedItem = newValue;
-              presenter.updateLoading(true);
-              presenter.filter = newValue!;
-              presenter.convertFilter();
-              // await presenter.saveFilter(newValue);
+              provider.updateLoading(true);
+              provider.filter = newValue!;
+              provider.convertFilter();
             });
+            if (newValue != null) {
+              await provider.saveFilter(newValue);
+            }
           },
         );
       },

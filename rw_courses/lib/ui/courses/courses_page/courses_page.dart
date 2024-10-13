@@ -12,13 +12,18 @@ class _CoursesPageState extends State<CoursesPage> {
 
   @override
   void initState() {
+    // TODO: implement initState
     super.initState();
+    Provider.of<CourseProvider>(
+      context,
+      listen: false,
+    ).loadFilter();
   }
 
   @override
   Widget build(BuildContext context) {
     return Consumer<CourseProvider>(
-      builder: (context, presenter, child) {
+      builder: (context, provider, child) {
         return Stack(
           children: [
             FutureBuilder(
@@ -30,11 +35,10 @@ class _CoursesPageState extends State<CoursesPage> {
               ),
               builder: (context, snapshot) {
                 final data = snapshot.data;
-                if (data != null) {
-                  Future.delayed(
-                    const Duration(seconds: 4),
-                    () => presenter.updateLoading(false),
-                  );
+
+                if (data != null &&
+                    snapshot.connectionState != ConnectionState.waiting) {
+                  provider.updateLoading(false);
 
                   return ListView.builder(
                     itemCount: data.length,
@@ -55,7 +59,7 @@ class _CoursesPageState extends State<CoursesPage> {
                 );
               },
             ),
-            presenter.isLoading
+            provider.isLoading
                 ? const Center(
                     child: CircularProgressIndicator(
                       color: Colors.green,
@@ -70,7 +74,7 @@ class _CoursesPageState extends State<CoursesPage> {
 
   Widget _buildRow(Data data) {
     return Consumer<CourseProvider>(
-      builder: (context, presenter, child) {
+      builder: (context, provider, child) {
         return InkWell(
           onTap: () {
             Navigator.push(
@@ -97,7 +101,7 @@ class _CoursesPageState extends State<CoursesPage> {
                       overflow: TextOverflow.ellipsis,
                     ),
                     Text(
-                      presenter.domainStrConverter(data),
+                      provider.domainStrConverter(data),
                       maxLines: 3,
                       style: Style.subContent,
                       overflow: TextOverflow.ellipsis,
