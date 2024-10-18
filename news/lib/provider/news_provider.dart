@@ -1,6 +1,15 @@
 import '/constants/index.dart';
 
 class NewsProvider with ChangeNotifier {
+
+  NewsProvider._internal();
+
+  static final NewsProvider _instance = NewsProvider._internal();
+
+  factory NewsProvider() {
+    return _instance;
+  }
+
   //data load?
   bool isDataLoaded = false;
 
