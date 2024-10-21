@@ -7,6 +7,11 @@ class NewsDetail extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    var provider = Provider.of<NewsProvider>(
+      context,
+      listen: false,
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: Row(
@@ -14,6 +19,15 @@ class NewsDetail extends StatelessWidget {
             ScrollingTitle(news: news),
           ],
         ),
+        actions: [
+          IconButton(
+            icon: const Icon(Icons.delete_forever_outlined),
+            onPressed: () => showConfirmationDialog(
+              context,
+              onConfirm: () => provider.deleteNews(news),
+            ),
+          ),
+        ],
       ),
       body: Container(
         padding: const EdgeInsets.all(AppPadding.extra),
@@ -45,7 +59,7 @@ class NewsDetail extends StatelessWidget {
     return Center(
       child: Thumbnail(
         news: news,
-        width: MediaQuery.sizeOf(context).width * 0.8,
+        width: MediaQuery.sizeOf(context).width * 0.85,
       ),
     );
   }

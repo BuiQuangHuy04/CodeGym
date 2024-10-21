@@ -38,6 +38,18 @@ class Style {
     fontSize: 18,
     fontWeight: FontWeight.bold,
   );
+
+  static const titleConfirmDialog = TextStyle(
+    color: Colors.white,
+    fontSize: 18,
+    fontWeight: FontWeight.bold,
+  );
+
+  static const contentConfirmDialog = TextStyle(
+    color: Colors.white,
+    fontSize: 16,
+    fontWeight: FontWeight.normal,
+  );
 }
 
 class AppDuration {

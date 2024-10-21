@@ -1,13 +1,16 @@
 import '/constants/index.dart';
 
 class NewsProvider with ChangeNotifier {
-
   NewsProvider._internal();
 
   static final NewsProvider _instance = NewsProvider._internal();
 
   factory NewsProvider() {
     return _instance;
+  }
+
+  void notifyDataUpdated() {
+    WidgetsBinding.instance.addPostFrameCallback((_) => notifyListeners());
   }
 
   //data load?
@@ -45,31 +48,6 @@ class NewsProvider with ChangeNotifier {
   //list news
   var listNews = <News>[];
 
-  void getListNews() {
-    listNews = isDataLoaded ? listNews : objectBox!.newsBox.getAll();
-    isDataLoaded = true;
-
-    notifyDataUpdated();
-  }
-
-  void addNews(News news) {
-    listNews.add(news);
-
-    notifyDataUpdated();
-  }
-
-  void addAllNews(List<News> listNews) {
-    listNews.addAll(listNews);
-
-    notifyDataUpdated();
-  }
-
-  void updateNews(int index, News news) {
-    listNews[index] = news;
-
-    notifyDataUpdated();
-  }
-
   //objectbox
   ObjectBox? objectBox;
 
@@ -79,13 +57,29 @@ class NewsProvider with ChangeNotifier {
     notifyDataUpdated();
   }
 
-  void notifyDataUpdated() {
-    WidgetsBinding.instance.addPostFrameCallback((_) => notifyListeners());
+  void getListNews() {
+    listNews = isDataLoaded ? listNews : objectBox!.newsBox.getAll();
+    isDataLoaded = true;
+
+    notifyDataUpdated();
   }
 
-  void saveLocalStorage() {
-    if (objectBox != null) {
-      objectBox!.newsBox.putMany(listNews);
-    }
+  void addNews(News news) {
+    listNews.add(news);
+    objectBox!.newsBox.put(news);
+    notifyDataUpdated();
+  }
+
+  void updateNews(int index, News news) {
+    listNews[index] = news;
+    objectBox!.newsBox.getAll()[index] = news;
+
+    notifyDataUpdated();
+  }
+
+  void deleteNews(News news) {
+    print('deleteNews called');
+    objectBox!.newsBox.remove(news.id);
+    listNews.remove(news);
   }
 }

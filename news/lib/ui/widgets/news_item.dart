@@ -45,7 +45,7 @@ Widget newsItemWidget(News news) {
                     children: [
                       Text(
                         news.title,
-                        maxLines: 4,
+                        maxLines: 3,
                         textAlign: TextAlign.justify,
                         style: Style.contentBigBold,
                         overflow: TextOverflow.ellipsis,

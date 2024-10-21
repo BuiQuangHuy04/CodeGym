@@ -19,7 +19,7 @@ class _ScrollingTitleState extends State<ScrollingTitle>
     super.initState();
 
     _controller = AnimationController(
-      duration: const Duration(seconds: 10),
+      duration: AppDuration.slow * 5,
       vsync: this,
     )..repeat();
 
@@ -43,7 +43,9 @@ class _ScrollingTitleState extends State<ScrollingTitle>
                 children: [
                   for (int i = 0; i < 10; i++)
                     Padding(
-                      padding: const EdgeInsets.symmetric(horizontal: 16.0),
+                      padding: const EdgeInsets.symmetric(
+                        horizontal: AppPadding.big,
+                      ),
                       child: Text(
                         widget.news.title,
                         style: Style.appbarTitle,

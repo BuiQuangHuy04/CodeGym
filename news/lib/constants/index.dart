@@ -24,8 +24,8 @@ export '/ui/news/news_adding_page/app_img_picker.dart';
 export '/ui/news/news_page/news_page.dart';
 export '/ui/widgets/scrolling_appbar.dart';
 export '/ui/widgets/app_text_field.dart';
-export '/ui/widgets/loading_img.dart';
 export '/ui/widgets/news_item.dart';
 export '/ui/widgets/thumbnail.dart';
+export '/ui/widgets/dialog.dart';
 export '/ui/my_app_news.dart';
 

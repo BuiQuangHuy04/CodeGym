@@ -63,7 +63,7 @@ class _NewsAddingPageState extends State<NewsAddingPage> {
                       print(news);
                     }
                     provider.addNews(news);
-                    provider.objectBox!.newsBox.put(news);
+                    // provider.objectBox!.newsBox.put(news);
                     Navigator.pop(context);
                   }
                 },
